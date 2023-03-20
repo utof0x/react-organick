@@ -1,15 +1,17 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Home from "./components/home/Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-const App = () => {
+import { About, Header, Footer, Home, Shop } from "components";
+
+export const App: React.FC = () => {
   return (
-    <div>
+    <Router>
       <Header />
-      <Home />
+      <Routes>
+        <Route path="/" Component={Home} />
+        <Route path="/about" Component={About} />
+        <Route path="/shop" Component={Shop} />
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 };
-
-export default App;
